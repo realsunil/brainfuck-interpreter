@@ -11,8 +11,9 @@ file_handle = open(sys.argv[1], "r")
 
 code = file_handle.read()
 i=0
+a=[]
 while i<len(code):
-	#print(i,end="")
+
 	if code[i] == '<':
 		ptr_loc -= 1
 		if(ptr_loc < 0):
@@ -37,9 +38,16 @@ while i<len(code):
 
 	elif code[i] == ',':
 		try:
-			cells[ptr_loc] = ord(input())
+			if not len(a)>0:
+				a=list(input())
+			x=a.pop(0)
+			if x=='0':
+				break;
+			else:
+				cells[ptr_loc]=ord(x)
+			
 		except TypeError:
-			print("Single Char Was Expected")
+			print("TypeError")
 
 	elif code[i] == '+':
 		cells[ptr_loc] += 1
