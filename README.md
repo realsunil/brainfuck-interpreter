@@ -2,8 +2,8 @@
 A simple brainfuck language interpreter in python
 
 
-# Use :
+# How to Use :
 python3 bf_interpreter.py <brainfuck_code_file>
 
 ## Note:
-0 indicates end of input while giving input
+while giving input, 0 must be entered to indicate the end of input
